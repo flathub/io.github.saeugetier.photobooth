@@ -8,12 +8,12 @@
         "--share=ipc",
         "--share=network",
         "--device=all",
+        "--socket=fallback-x11",
+        "--socket=wayland",
         "--filesystem=home",
         "--filesystem=/media",
         "--filesystem=/run/media",
-        "--filesystem=/mnt",
-        "--socket=fallback-x11",
-        "--socket=wayland"
+        "--filesystem=/mnt"
     ],
     "cleanup": [
         "/include",
