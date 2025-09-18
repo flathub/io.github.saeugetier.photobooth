@@ -116,7 +116,7 @@
             "name": "yolo-models",
             "buildsystem": "simple",
             "build-commands": [
-                "mkdir -d ${FLATPAK_DEST}/share/models/",
+                "mkdir -p ${FLATPAK_DEST}/share/models/",
                 "install -Dm644 *.onnx ${FLATPAK_DEST}/share/models/",
                 "install -Dm644 coco.names ${FLATPAK_DEST}/share/models/",
                 "for d in *_model; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done"
