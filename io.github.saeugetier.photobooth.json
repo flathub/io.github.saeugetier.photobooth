@@ -174,7 +174,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saeugetier/photobooth",
-                    "commit": "f24baca346973fb2e20656691589c7f257c35f2b"
+                    "commit": "1fc326ae91a7bf49c22492cf69e9ad240bea9e11"
+                    "tag": "v0.8.0"
                 }
             ]
         }
