@@ -121,14 +121,46 @@
                 "mkdir -p ${FLATPAK_DEST}/share/models/",
                 "install -Dm644 *.onnx ${FLATPAK_DEST}/share/models/",
                 "install -Dm644 coco.names ${FLATPAK_DEST}/share/models/",
-                "for d in *_model; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done"
+                "for d in *_model; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done",
+                "for d in *_model_320; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/saeugetier/photobooth-model-zoo/releases/download/v0.1.0/yolo-models-v0.1.0.tar.gz",
-                    "sha256": "48dd52be9d6ab57ce45e237e0a39fbe99275bd19e30a695df6db29e6b1ab65fb"
+                    "url": "https://github.com/saeugetier/photobooth-model-zoo/releases/download/v0.2.0/yolo-models-v0.2.0.tar.gz",
+                    "sha256": "b76a6927f40c889d0e24a8e063f9c74125bf7349764957951fc8ae94a3e12f87"
                 }
+            ]
+        },
+        {
+            "name": "libgphoto2",
+            "builddir": true,
+            "cleanup": [
+                "/doc",
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/gphoto/libgphoto2.git",
+                    "tag": "v2.5.32",
+                    "commit": "de1f0617b1ffa39c1980d1306343709c7dc0120e",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 12558,
+                        "stable-only": true
+                    }
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "AUTOMAKE=\"automake --foreign\" autoreconf -vfis"
+                    ]
+                }
+            ],
+            "modules": [
+                "shared-modules/libusb/libusb.json"
             ]
         },
         {
@@ -143,8 +175,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saeugetier/photobooth",
-                    "commit": "d92e29d9ae1c1ef60ba16945614760f1d9dc4825",
-                    "tag": "v0.7.3"
+                    "commit": "1fc326ae91a7bf49c22492cf69e9ad240bea9e11",
+                    "tag": "v0.8.0"
                 }
             ]
         }
