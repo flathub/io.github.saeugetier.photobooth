@@ -310,6 +310,7 @@
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 12558,
+                        "tag-template": "v$version",
                         "stable-only": true
                     }
                 },
